@@ -1,0 +1,27 @@
+.otp-field {
+	width: 53px;
+	margin-right: 10px;
+	padding-left: 17px;
+	height: 40px;
+}
+
+.container-class {
+  display: flex;
+  margin-top: 44px;
+	justify-content: center;
+}
+
+.otp-text {
+	margin: 2% 0 0 44%;
+	font-weight: bolder;
+}
+
+.otp-header {
+  margin-top: 30px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
