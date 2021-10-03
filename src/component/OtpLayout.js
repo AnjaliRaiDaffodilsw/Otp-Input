@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import OtpHeader from './OtpHeader';
 import OtpInput from './OtpInput';
-import '../assets/styles/OtpInputScreen.css';
+import '../assets/styles/OtpScreen.scss';
 import OtpDetails from './OtpDetails';
 
 const OtpLayout = () => {
@@ -32,7 +32,7 @@ const OtpLayout = () => {
 			//for destructuring the copy pasted otp
 			console.log(indexOfInput)
 			newOTP = [...otp.slice(0, indexOfInput), ...value.split('')].slice(0, 6);
-			//for focus
+			//for focusing the copy pasted otp
 			const focusedInputIndex = newOTP.length <= 5 ? newOTP.length : 5;
 			form.elements[focusedInputIndex].focus();
 		}

@@ -1,3 +1,5 @@
+@import './Variables.scss';
+
 .otp-field {
 	width: 53px;
 	margin-right: 10px;
@@ -6,9 +8,9 @@
 }
 
 .container-class {
-  display: flex;
+  display: $display-flex;
   margin-top: 40px;
-  justify-content: center;
+  justify-content: $display-center;
 }
 
 .otp-text {
@@ -18,6 +20,7 @@
 
 .otp-header {
   margin-top: 30px;
+  text-align: $display-center;
 }
 
 input::-webkit-outer-spin-button,

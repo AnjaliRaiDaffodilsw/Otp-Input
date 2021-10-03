@@ -2,7 +2,7 @@ import React from 'react'
 import Input from '@material-ui/core/Input';
 import PropTypes from 'prop-types';
 
-import '../assets/styles/OtpInputScreen.css';
+import '../assets/styles/OtpScreen.scss';
 
 const OtpInputScreen = (props) => {
 	const {

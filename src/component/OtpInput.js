@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import OtpInputScreen from './OtpInputScreen';
-import '../assets/styles/OtpInputScreen.css';
+import '../assets/styles/OtpScreen.scss';
 
 const OtpInput = (props) => {
 	const { handleOtpInput, otpState, handleBackSpace } = props;

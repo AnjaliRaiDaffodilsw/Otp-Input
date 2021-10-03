@@ -1,10 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 
+import '../assets/styles/OtpScreen.scss';
+
 const OtpHeader = (props) => {
 	const { headerText, otpText } = props;
 	return (
-		<div className="text-center otp-header">
+		<div className="otp-header">
 			<h1>{headerText}</h1>
 			<p>{otpText}</p>
 		</div>
