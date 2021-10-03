@@ -1,61 +1,32 @@
 import React from 'react';
-import Input from '@material-ui/core/Input';
 import PropTypes from 'prop-types';
+
+import OtpInputScreen from './OtpInputScreen';
+import '../assets/styles/OtpInputScreen.css';
 
 const OtpInput = (props) => {
 	const { handleOtpInput, otpState, handleBackSpace } = props;
+	const otp = Array.from({ length: 6 });
+
 	return (
 		<div>
-			<form>
-				<Input
-					className="otp-field "
-					type='number'
-					inputProps={{ maxLength: 1 }}
-					autoFocus
-					value={otpState[0]}
-					onChange={(e) => handleOtpInput(e.target)}
-					onKeyDown={(e) => handleBackSpace(e)}
-				/>
-				<Input
-					className="otp-field "
-					type='number'
-					inputProps={{ maxLength: 1 }}
-					value={otpState[1]}
-					onChange={(e) => handleOtpInput(e.target)}
-					onKeyDown={(e) => handleBackSpace(e)}
-				/>
-				<Input
-					className="otp-field "
-					type='number'
-					inputProps={{ maxLength: 1 }}
-					value={otpState[2]}
-					onChange={(e) => handleOtpInput(e.target)}
-					onKeyDown={(e) => handleBackSpace(e)}
-				/>
-				<Input
-					className="otp-field "
-					type='number'
-					inputProps={{ maxLength: 1 }}
-					value={otpState[3]}
-					onChange={(e) => handleOtpInput(e.target)}
-					onKeyDown={(e) => handleBackSpace(e)}
-				/>
-				<Input
-					className="otp-field "
-					type='number'
-					inputProps={{ maxLength: 1 }}
-					value={otpState[4]}
-					onChange={(e) => handleOtpInput(e.target)}
-					onKeyDown={(e) => handleBackSpace(e)}
-				/>
-				<Input
-					className="otp-field "
-					type='number'
-					inputProps={{ maxLength: 1 }}
-					value={otpState[5]}
-					onChange={(e) => handleOtpInput(e.target)}
-					onKeyDown={(e) => handleBackSpace(e)}
-				/>
+			<form className="container-class">
+				{
+					otp.map((value, index) => {
+						return (
+							<OtpInputScreen
+								key={index}
+								index={index}
+								inputAutoFocus={index === 0 ? true : false}
+								handleOtpInput={handleOtpInput}
+								handleBackSpace={handleBackSpace}
+								otpState={otpState}
+								inputClassName="otp-field "
+								inputType='number'
+							/>
+						)
+					})
+				}
 			</form>
 		</div>
 	)

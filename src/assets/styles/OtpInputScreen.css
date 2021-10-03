@@ -7,12 +7,12 @@
 
 .container-class {
   display: flex;
-  margin-top: 44px;
-	justify-content: center;
+  margin-top: 40px;
+  justify-content: center;
 }
 
 .otp-text {
-	margin: 2% 0 0 44%;
+	margin: 2% 0 0 42%;
 	font-weight: bolder;
 }
 

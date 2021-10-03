@@ -24,11 +24,15 @@ const OtpLayout = () => {
 		let newOTP = [...otp];
 		const indexOfInput = Array.prototype.indexOf.call(form, target);
 		if (value) {
+			//for setting the focus
 			form.elements[indexOfInput < 5 ? indexOfInput + 1 : indexOfInput].focus();
 			newOTP[indexOfInput] = value;
 		}
 		if (value.length > 1) {
+			//for destructuring the copy pasted otp
+			console.log(indexOfInput)
 			newOTP = [...otp.slice(0, indexOfInput), ...value.split('')].slice(0, 6);
+			//for focus
 			const focusedInputIndex = newOTP.length <= 5 ? newOTP.length : 5;
 			form.elements[focusedInputIndex].focus();
 		}
