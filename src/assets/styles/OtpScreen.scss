@@ -16,11 +16,13 @@
 .otp-text {
 	margin: 2% 0 0 42%;
 	font-weight: bolder;
+  color: $display-color;
 }
 
 .otp-header {
   margin-top: 30px;
   text-align: $display-center;
+  color: $display-color;
 }
 
 input::-webkit-outer-spin-button,
