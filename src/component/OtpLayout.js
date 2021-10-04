@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 
 import OtpHeader from './OtpHeader';
 import OtpInput from './OtpInput';
-import '../assets/styles/OtpScreen.scss';
 import OtpDetails from './OtpDetails';
 
 const OtpLayout = () => {
@@ -11,7 +10,7 @@ const OtpLayout = () => {
 	const handleBackSpace = (e) => {
 		const { form } = e.target;
 		const indexOfInput = Array.prototype.indexOf.call(form, e.target);
-		if (e.keyCode === 8) {
+		if (e.keyCode === 8 || e.keyCode === 46) {
 			form.elements[indexOfInput !== 0 ? indexOfInput - 1 : indexOfInput].focus();
 			const newOTP = [...otp];
 			newOTP[indexOfInput] = '';
@@ -45,13 +44,13 @@ const OtpLayout = () => {
 				headerText={'Welcome to OTP screen'}
 				otpText={'Enter your OTP below'}
 			/>
-			<div className="container-class">
 				<OtpInput
 					otpState={otp}
 					handleOtpInput={handleOtpInput}
 					handleBackSpace={handleBackSpace}
+					inputClassName="otp-field "
+					inputType='number'
 				/>
-			</div>
 			<OtpDetails
 				otpState={otp}
 			/>

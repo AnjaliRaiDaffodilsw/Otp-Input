@@ -12,7 +12,6 @@ const OtpInputScreen = (props) => {
 		index,
 		inputType,
 		inputClassName,
-		inputAutoFocus
 	} = props;
 
 	return (
@@ -22,7 +21,7 @@ const OtpInputScreen = (props) => {
 				className={inputClassName}
 				type={inputType}
 				value={otpState[index]}
-				autoFocus={inputAutoFocus}
+				autoFocus={index === 0 ? true : false}
 				onChange={(e) => handleOtpInput(e.target)}
 				onKeyDown={(e) => handleBackSpace(e)}
 			/>
@@ -37,7 +36,6 @@ OtpInputScreen.propTypes = {
 	index: PropTypes.number,
 	inputType: PropTypes.string,
 	inputClassName: PropTypes.string,
-	inputAutoFocus: PropTypes.string,
 };
 
 export default OtpInputScreen

@@ -5,7 +5,13 @@ import OtpInputScreen from './OtpInputScreen';
 import '../assets/styles/OtpScreen.scss';
 
 const OtpInput = (props) => {
-	const { handleOtpInput, otpState, handleBackSpace } = props;
+	const {
+		handleOtpInput,
+		otpState,
+		handleBackSpace,
+		inputClassName,
+		inputType
+	} = props;
 	const otp = Array.from({ length: 6 });
 
 	return (
@@ -17,12 +23,11 @@ const OtpInput = (props) => {
 							<OtpInputScreen
 								key={index}
 								index={index}
-								inputAutoFocus={index === 0 ? true : false}
 								handleOtpInput={handleOtpInput}
 								handleBackSpace={handleBackSpace}
 								otpState={otpState}
-								inputClassName="otp-field "
-								inputType='number'
+								inputClassName={inputClassName}
+								inputType={inputType}
 							/>
 						)
 					})
@@ -36,6 +41,8 @@ OtpInput.propTypes = {
 	handleOtpInput: PropTypes.func,
 	handleBackSpace: PropTypes.func,
 	otpState: PropTypes.array,
+	inputClassName: PropTypes.string,
+	inputType: PropTypes.string,
 };
 
 export default OtpInput;
